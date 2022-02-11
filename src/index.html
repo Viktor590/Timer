@@ -6,11 +6,56 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.min.css">
-  <title>Document</title>
+  <title>Timer</title>
 </head>
 
 <body>
-  <h1>Hello</h1>
+  <div class="container">
+    <div class="timer">
+      <div class="timer-clock">
+        <p class="hour time">
+          00
+        </p>
+        <p class="minuts time">
+          00
+        </p>
+        <p class="second time">
+          00
+        </p>
+      </div>
+      <div class="timer-buttons">
+        <button class="start btn">start</button>
+        <button class="stop btn">stop</button>
+        <button class="lap btn">lap</button>
+        <button class="pause btn">pause</button>
+      </div>
+    </div>
+    <div class="timer-result">
+      <h2 class="result-top__title">Results</h2>
+      <div class="result">
+        <div class="result-top">
+          <h3 class="result-title">
+            Lap 2
+          </h3>
+          <button class="result-delete">Delete</button>
+        </div>
+        <h2 class="result-time">
+          00h:00m:00s
+        </h2>
+      </div>
+      <div class="result">
+        <div class="result-top">
+          <h3 class="result-title">
+            Lap 2
+          </h3>
+          <button class="result-delete">Delete</button>
+        </div>
+        <h2 class="result-time">
+          00h:00m:00s
+        </h2>
+      </div>
+    </div>
+  </div>
   <script src="js/app.min.js"></script>
 </body>
 
