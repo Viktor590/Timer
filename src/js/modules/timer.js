@@ -17,7 +17,6 @@ const timer = () => {
 
   let seconds = 0;
   let time;
-  const arr = [];
 
   function startTimer() {
     clearTimeout(time);
@@ -54,17 +53,25 @@ const timer = () => {
     second.textContent = '00';
   }
 
+  let indexArr = () => {
+    let count = 1;
+    for (let i = count; i <= results.children.length; i++) {
+      count = i + 1
+    }
+    return count
+  }
+
+
   function lap() {
     const hourLap = hour.textContent;
     const minutsLap = minuts.textContent;
     const secondLap = second.textContent;
     const element = document.createElement('li');
-    const indexLap = arr.length + 1;
     element.classList.add('result');
     element.innerHTML = `
              <div class="result-top">
             <h3 class="result-title">
-              Lap ${indexLap}
+              Lap ${indexArr()}
             </h3>
             <button class="result-delete">Delete</button>
           </div>
@@ -73,8 +80,6 @@ const timer = () => {
           </h2>
         `;
     results.append(element)
-    arr.push(element)
-
     const deleteBtn = document.querySelectorAll('.result-delete');
 
     deleteBtn.forEach((el) => {
