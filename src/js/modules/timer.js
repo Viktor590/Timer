@@ -3,7 +3,7 @@ const timer = () => {
   const minuts = document.querySelector('.minuts');
   const second = document.querySelector('.second');
   const buttons = document.querySelectorAll('.btn');
-  const results = document.querySelector('.list')
+  const results = document.querySelector('.list');
 
 
   buttons.forEach(el => {
@@ -18,7 +18,6 @@ const timer = () => {
   let seconds = 0;
   let time;
   const arr = [];
-
 
   function startTimer() {
     clearTimeout(time);
@@ -55,14 +54,12 @@ const timer = () => {
     second.textContent = '00';
   }
 
-
-
   function lap() {
     const hourLap = hour.textContent;
     const minutsLap = minuts.textContent;
     const secondLap = second.textContent;
     const element = document.createElement('li');
-    const indexLap = arr.length;
+    const indexLap = arr.length + 1;
     element.classList.add('result');
     element.innerHTML = `
              <div class="result-top">
@@ -77,17 +74,19 @@ const timer = () => {
         `;
     results.append(element)
     arr.push(element)
-    console.log(arr);
+
+    const deleteBtn = document.querySelectorAll('.result-delete');
+
+    deleteBtn.forEach((el) => {
+      el.addEventListener('click', () => {
+        el.parentNode.parentNode.remove()
+      })
+    })
 
   }
-
 
   function pauseTimer() {
     clearTimeout(time);
-  }
-
-  function clearInterval() {
-
   }
 }
 export default timer;
